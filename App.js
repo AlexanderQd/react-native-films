@@ -15,12 +15,11 @@ import { StackNavigator } from 'react-navigation';
 
 //Screens
 import  HomeScreen  from './components/screens/HomeScreen';
-import  ProfileScreen  from './components/screens/ProfileScreen';
-
+import  RushScreen  from './components/screens/RushScreen';
 
 const NavigationApp = StackNavigator({
-  Home: { screen: HomeScreen },
-  Profile: { screen: ProfileScreen },
+  Home: { screen: HomeScreen }, 
+  Rush: {screen: RushScreen}
 });
 
 export default class App extends Component {
@@ -37,15 +36,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
