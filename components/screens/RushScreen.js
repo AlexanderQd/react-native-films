@@ -1,20 +1,14 @@
 
 import React, { Component } from 'react';
 import {
-  Platform,
   StyleSheet,
   Text,
   View,
   Button,
   Image,
-  ScrollView,
-  Dimensions,
-  TouchableHighlight
+  Dimensions, 
 } from 'react-native';
 import Grid from 'react-native-grid-component';
-
-
-
 
 
 export default class RushScreen extends Component {
@@ -51,17 +45,15 @@ export default class RushScreen extends Component {
       }
     }
     _renderItem = (data, i) => <View style={styles.item} key={i}> 
-        <View> 
+        <View style={styles.box}> 
           <Text>{data.col1} </Text>
         </View>        
     </View>
     render() {
       const { navigate } = this.props.navigation;
       return (          
-        <View style={ {flex: 1}}>
-          <View >
-            <Image  style={styles.box} source={require('../assets/img/rush.jpg')}/>
-          </View>
+        <View style={ {flex: 1}}>          
+          <Image  style={styles.image} source={require('../assets/img/rush.jpg')}/>          
           <Grid
               style={styles.list}
               renderItem={this._renderItem}
@@ -131,8 +123,11 @@ export default class RushScreen extends Component {
                     col1: this.state.sinopsis,                    
                   },
                   {
-                    col2: this.state.description,
+                    col1: this.state.description,
                   },
+                  {
+                    col1: ""
+                  }
                   ]}
               itemsPerRow={2}
             />
@@ -167,11 +162,18 @@ export default class RushScreen extends Component {
     list: {
       flex: 1
     },  
-    box: {
+    image: {     
       margin: 2,
       height: 200,
-      width: Dimensions.get('window').width / 2 -6,
+      width: Dimensions.get('window').width / 2 -15,
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',         
+    },
+    box: {     
+      margin: 2,
+      height: 400,
+      width: Dimensions.get('window').width / 2 -15,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   });

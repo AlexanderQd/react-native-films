@@ -22,24 +22,34 @@ export default class HomeScreen extends Component {
     <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
         <View style={styles.box}>
-          <TouchableHighlight  onPress={() => navigate('Rush') }>
+          <TouchableHighlight  onPress={() => navigate('Element') }>
               <Image style={styles.box} source={require('../assets/img/5element.jpg')}/>
           </TouchableHighlight>
         </View>
         <View style={styles.box}>
-          <Image style={styles.box} source={require('../assets/img/diehard.jpg')}/>
+          <TouchableHighlight  onPress={() => navigate('Diehard') }>
+            <Image style={styles.box} source={require('../assets/img/diehard.jpg')}/>
+          </TouchableHighlight>
         </View>
         <View style={styles.box}>
-          <Image style={styles.box} source={require('../assets/img/gladiator.jpg')}/>
+          <TouchableHighlight  onPress={() => navigate('Gladiator') }>
+            <Image style={styles.box} source={require('../assets/img/gladiator.jpg')}/>
+          </TouchableHighlight>
         </View>
         <View style={styles.box}>
-          <Image style={styles.box} source={require('../assets/img/rush.jpg')}/>
+          <TouchableHighlight  onPress={() => navigate('Rush') }>
+            <Image style={styles.box} source={require('../assets/img/rush.jpg')}/>
+          </TouchableHighlight>
         </View>
         <View style={styles.box}>
-          <Image style={styles.box} source={require('../assets/img/shooter.jpg')}/>
+          <TouchableHighlight  onPress={() => navigate('Shooter') }>
+            <Image style={styles.box} source={require('../assets/img/shooter.jpg')}/>
+          </TouchableHighlight>
         </View>
         <View style={styles.box}>
-          <Image style={styles.box} source={require('../assets/img/training-day.jpg')}/>
+          <TouchableHighlight  onPress={() => navigate('Trainingday') }>
+            <Image style={styles.box} source={require('../assets/img/training-day.jpg')}/>
+          </TouchableHighlight>
         </View>
       </View>
     </ScrollView>
