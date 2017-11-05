@@ -7,10 +7,12 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"radio-button-react-native": "^1.1.6",
 		"react": "16.0.0",
 		"react-native": "0.50.1",
 		"react-native-flexbox-grid": "^0.3.2",
 		"react-native-grid-component": "^1.0.7",
+		"react-native-simple-radio-button": "^2.7.0",
 		"react-navigation": "^1.0.0-beta.19"
 	},
 	"devDependencies": {

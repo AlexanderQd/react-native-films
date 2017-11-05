@@ -8,7 +8,20 @@ import {
   Dimensions, 
 } from 'react-native';
 import Grid from 'react-native-grid-component';
+import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 
+var radio_props = [
+  {label: '1', value: 1 },
+  {label: '2', value: 2 },
+  {label: '3', value: 3 },
+  {label: '4', value: 4 },
+  {label: '5', value: 5 },
+  {label: '6', value: 6 },
+  {label: '7', value: 7 },
+  {label: '8', value: 8 },
+  {label: '9', value: 9 },
+  {label: '10', value: 10 },
+];
 
 export default class DiehardScreen extends Component {
   constructor(props)
@@ -18,7 +31,8 @@ export default class DiehardScreen extends Component {
         sinopsis: "",
         description: "",
         button: "Más información",
-        stateButton: true      
+        stateButton: true,
+        value: 0      
     }
     this.onButtonPress = this.onButtonPress.bind(this);
   }
@@ -51,8 +65,27 @@ export default class DiehardScreen extends Component {
     render() {
       const { navigate } = this.props.navigation;
       return (          
-        <View style={ {flex: 1}}>          
-          <Image  style={styles.image} source={require('../assets/img/diehard.jpg')}/>          
+        <View style={ {flex: 1}}>
+        <View style={styles.container}>
+          <View style={styles.head}>
+            <Image  style={styles.image} source={require('../assets/img/diehard.jpg')}/>   
+          </View>
+          <View style={styles.head}>
+            <Text style={styles.headtext}>{this.state.value}</Text>            
+          </View>
+        </View>
+        <Text style={{padding: 10}}>Valorar pelicula</Text>
+        <View style={styles.radio}>
+        <RadioForm
+                radio_props={radio_props}
+                initial={0}
+                formHorizontal={true}
+                labelHorizontal={false}
+                buttonSize={15}
+                onPress={(value) => {this.setState({value:value})}}
+          />
+          </View>                 
+                 
           <Grid
               style={styles.list}
               renderItem={this._renderItem}
@@ -172,10 +205,26 @@ export default class DiehardScreen extends Component {
       alignItems: 'center',         
     },
     box: {     
-      margin: 2,
+      margin: 2,      
       height: 10,
       width: Dimensions.get('window').width / 2 -15,
       alignItems: 'center',
       justifyContent: 'center',
     },
+    head: {     
+      margin: 2,      
+      height: 200,
+      width: Dimensions.get('window').width / 2 -15,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    headtext: {
+      fontWeight: 'bold',
+      fontSize: 100,
+      color: "#841584"
+    },
+    radio: {
+      marginBottom: 20,
+      marginTop: 20
+    }
   });
